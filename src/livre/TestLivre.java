@@ -20,7 +20,7 @@ public class TestLivre {
 		Livre.afficheCompteur(); //affiche le nombre de livres
 		
 		for (int i = 0; i < livres.length; i++) { //boucle de parcours du tableau
-			System.out.println(livres[i].livreToString()); //affichage des attributs de chaque livre
+			System.out.println(livres[i].toString()); //affichage des attributs de chaque livre
 			System.out.println("Le prix du livre "+livres[i].titre+" de l'auteur "+livres[i].auteur+" est : "+livres[i].prix+" euros");
 			System.out.println("Référence du livre est "+(i+1));
 			nbLivre++;

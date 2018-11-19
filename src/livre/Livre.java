@@ -16,17 +16,21 @@ package livre;
 public class Livre {
 
 	//attributs pour chaque livre
-	static long id= 0;;
+	long id;
 	String titre;
 	String auteur;
 	double prix;
+	
+	
+	//ajout d'un compteur en statique
+	public static long count =0;
 
 	//génération du constructeur
 	public Livre(String titre, String auteur, double prix) {
+		this.id = ++count;
 		this.titre = titre;
 		this.auteur = auteur;
 		this.prix = prix;
-		id++;
 	}
 	
 	//génération des getters et setters
@@ -62,14 +66,15 @@ public class Livre {
 		this.prix = prix;
 	}
 
-	//création du toString()
-	public String livreToString() {
+	//méthode toString() surchargée
+	@Override
+	public String toString() {
 		return "\n Titre du livre : " + titre + "\n Auteur du livre : " + auteur + "\n Prix du livre : " + prix;
 	}
 	
 	//compteur pour afficher le nombre de livre avant execution de la boucle
 	public static void afficheCompteur() {
-		System.out.println("Combien de livres à gérer ? "+id);
+		System.out.println("Combien de livres à gérer ? "+count);
 	}
 
 }
